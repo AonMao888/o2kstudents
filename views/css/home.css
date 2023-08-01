@@ -1,0 +1,103 @@
+body{
+    margin: 0;
+    background: #eee;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+nav{
+    background: white;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+    padding: 9px 0;
+}
+nav .left{
+    display: flex;
+    align-items: center;
+    margin-left: 19px;
+}
+nav .left a{
+    text-decoration: none;
+    font-size: 29px;
+    color: rgb(179, 63, 217);
+    font-weight: bold;
+}
+nav .left a span{
+    color: dimgray;
+    margin: 5px;
+}
+nav .right{
+    display: flex;
+    align-items: center;
+    margin-right: 15px;
+}
+nav .right a{
+    text-decoration: none;
+    padding: 7px 19px;
+    font-size: 24px;
+    color: #333;
+    transition: 0.4s;
+    border-radius: 4px;
+    margin: 0 5px;
+}
+nav .right a:hover{
+    background: #eee;
+    color: rgb(179, 63, 217);
+}
+.head{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 51px 0;
+}
+.head h1{
+    margin: 5px;
+    font-size: 63px;
+    color: rgb(179, 63, 217);
+}
+.search{
+    background: white;
+    width: 666px;
+    padding: 5px;
+    border-radius: 5px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+}
+.search input{
+    width: 100%;
+    font-size: 24px;
+    margin-left: 7px;
+    background: none;
+    outline: none;
+    border: none;color: #333;
+}
+.search button{
+    background: rebeccapurple;
+    color: white;
+    outline: none;border: none;
+    padding: 12px 24px;
+    font-size: 17px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: 0.4s;
+    transform: scale(1);
+}
+.search button:hover{
+    animation: searchbtn 1s;
+}
+.search button:active{transform: scale(0.89);}
+@keyframes searchbtn{
+    30%{transform: scale(0.91);}
+    50%{transform: scale(1);}
+    70%{transform: scale(0.91);}
+    100%{transform: scale(1);}
+}
+.head p{
+    margin: 9px;
+    color: dimgray;
+    font-size: 17px;
+}
