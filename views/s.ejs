@@ -18,7 +18,7 @@
         </div>
         <div class="right">
             <a href=""><i class="fa-solid fa-camera"></i><p>Scanner</p></a>
-            <a href=""><i class="fa-solid fa-share-nodes"></i><p>Share</p></a>
+            <a href="javascript:shar()"><i class="fa-solid fa-share-nodes"></i><p>Share</p></a>
         </div>
     </nav>
     <div class="con">
@@ -57,7 +57,7 @@
         var menu = document.querySelector(".menu");
         function showmenu(){menu.style.left=0}
         document.querySelector(".home").onclick=()=>{menu.style.left='-300px'}
-
+        function shar(){navigator.share({title:document.title,url:window.location.href})}
     </script>
 </body>
 </html>

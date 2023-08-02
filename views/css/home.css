@@ -101,3 +101,17 @@ nav .right a:hover{
     color: dimgray;
     font-size: 17px;
 }
+
+@media(max-width:700px){
+    nav .left a{font-size: 25px;}
+    nav .right a{font-size: 19px;}
+    .head h1{font-size: 51px;}.search{width: 91%;}
+    .search input{font-size: 19px;margin-left: 9px;}
+    .search button{font-size: 15px;padding: 10px 21px;}.head p{font-size: 15px;text-align: center;}
+}
+@media(max-width:591px){
+    nav .left a{font-size: 5vw;}
+    nav .right a{font-size: 15px;padding: 6px 10px;margin: 0 3px;}
+    .head h1{font-size: 9vw;}
+    .search input{font-size: 15px;}.search button{font-size: 14px;padding: 8px 15px;}
+}
