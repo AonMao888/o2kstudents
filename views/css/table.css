@@ -192,11 +192,13 @@ td a{
     .sc{width: 99%;margin: 0 auto;overflow-x: scroll;}
     table{width: 600px;margin: 9px;}
     nav .menubtn{font-size: 15px;}
-    nav .left a i{font-size: 15px;}
-    .logo{font-size: 19px;}
+    nav .left a i{font-size: 15px;}.menu a p{font-size: 14px;}
+    .logo{font-size: 17px;flex-direction: column;white-space: nowrap;align-items: flex-start;}
+    .logo span{margin: 0;font-size: 15px;}
+    .menu a img{height: 23px;}
     nav .right a{margin: 2px 5px;padding: 7px;}
     nav .right a p{display: none;}.home h1{font-size: 23px;}
-    th{font-size: 17px;}td{font-size: 13px;}
+    th{font-size: 15px;}td{font-size: 13px;}
 }
 .sc::-webkit-scrollbar{background: transparent;height: 7px;}
 .sc::-webkit-scrollbar-thumb{background: rgb(179, 63, 217);border-radius: 9px;}
