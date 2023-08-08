@@ -1,10 +1,13 @@
 body{
-    background-color: royalblue;
+    background: url('https://cdn.wallpapersafari.com/7/28/d2tT54.jpg')no-repeat;
+    background-size: cover;
+    background-position: center;
     height: 100vh;margin: 0;
     display: flex;justify-content: center;align-items: center;
 }
 .box{
-    background: white;
+    background: rgba(255, 255, 255, 0.237);
+    backdrop-filter: blur(5px);
     padding: 15px 36px;
     border-radius: 19px;
     display: flex;
@@ -33,9 +36,11 @@ body{
     color: #333;
 }
 .item{
-    background: white;
+    background: rgba(255, 255, 255, 0.164);
+    backdrop-filter: blur(5px);
     display: flex;
     width: 100%;
+    border-radius: 5px;
     align-items: center;
     justify-content: space-between;
     margin: 3px 0;
