@@ -12,6 +12,7 @@ app.set('view engine','ejs');
 //get css file
 app.get('/home.css',(req,res)=>{res.sendFile(__dirname+'/views/css/home.css')})
 app.get('/t.css',(req,res)=>{res.sendFile(__dirname+'/views/css/table.css')})
+app.get('/pr.css',(req,res)=>{res.sendFile(__dirname+'/views/css/pro.css')})
 
 //get home page
 app.get('/',(req,res)=>{
@@ -20,32 +21,48 @@ app.get('/',(req,res)=>{
 
 //get all students page
 app.get('/students',async(req,res)=>{
-    let {data,error} = await supabase.from('student').select().eq('type','student');
+    let {data,error} = await supabase.from('members').select().eq('type','student');
     res.render('s',{all:data,page:'Students'})
 })
 
 //get teachers page
 app.get('/teachers',async(req,res)=>{
-    let {data,error} = await supabase.from('student').select().eq('type','teacher');
+    let {data,error} = await supabase.from('members').select().eq('type','teacher');
     res.render('s',{all:data,page:'Teachers'})
 })
 
 //get pre GED page
 app.get('/pre-ged',async(req,res)=>{
-    let {data,error} = await supabase.from('student').select().eq('class','pre ged');
+    let {data,error} = await supabase.from('members').select().eq('class','pre ged');
     res.render('s',{all:data,page:'pre ged'})
 })
 
 //get GED page
 app.get('/ged',async(req,res)=>{
-    let {data,error} = await supabase.from('student').select().eq('class','ged');
+    let {data,error} = await supabase.from('members').select().eq('class','ged');
     res.render('s',{all:data,page:'ged'})
 })
 
 //get ICT page
 app.get('/ict',async(req,res)=>{
-    let {data,error} = await supabase.from('student').select().eq('class','ict');
+    let {data,error} = await supabase.from('members').select().eq('class','ict');
     res.render('s',{all:data,page:'ict'})
+})
+
+app.get('/d',(req,res)=>{
+    let datab = onValue(ref(db, '/users/'), (snapshot) => {
+        const username = (snapshot.val() && snapshot.val().username) || 'Anonymous';
+        // ...
+      }, {
+        onlyOnce: true
+      });
+})
+
+//get profile page
+app.get('/p/:id',async(req,res)=>{
+    let id = req.params.id;
+    let {data,error} = await supabase.from('members').select().eq('member_id',id);
+    res.render('p',{all:data})
 })
 
 app.listen(80,()=>{console.log("server started with port 80")})

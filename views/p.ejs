@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+    <link rel="stylesheet" href="../pr.css">
+</head>
+<% var mathematic = all[0].mathematic%>
+<% var science = all[0].science %>
+<body>
+    <div class="box">
+        <div class="left">
+            <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png" alt="" class="profile">
+            <h1><%=all[0].name%></h1>
+            <div class="item"><p>Address</p><p><%=all[0].address%></p></div>
+            <div class="item"><p>Email</p><p><%=all[0].email%></p></div>
+            <div class="item"><p>Class</p><p><%=all[0].class%></p></div>
+            <div class="item"><p>ID</p><p><%=all[0].member_id%></p></div>
+        </div><hr>
+        <div class="right">
+            <h1>Points</h1>
+            <%if(all[0].class == 'ged'){%>
+                <div class="item"><p>English</p><p><%=all[0].english%></p></div>
+                <div class="item"><p>Mathematic</p><p><%=all[0].mathematic%></p></div>
+                <div class="item"><p>Science</p><p><%=all[0].science%></p></div>
+                <div class="item"><p>Thai</p><p><%=all[0].thai%></p></div>
+            <%}else if(all[0].class == 'pre ged'){%>
+                <div class="item"><p>Tai</p><p><%=all[0].tai%></p></div>
+                <div class="item"><p>Burmese</p><p><%=all[0].burmese%></p></div>
+                <div class="item"><p>English</p><p><%=all[0].english%></p></div>
+                <div class="item"><p>Mathematic</p><p><%=all[0].mathematic%></p></div>
+                <div class="item"><p>Science</p><p><%=all[0].science%></p></div>
+                <div class="item"><p>Thai</p><p><%=all[0].thai%></p></div>
+                <div class="item"><p>Art</p><p><%=all[0].art%></p></div>
+                <div class="item"><p>Chinese</p><p><%=all[0].chinese%></p></div>
+            <%}else if(all[0].class == 'secondary'){%>
+                <div class="item"><p>Tai</p><p><%=all[0].tai%></p></div>
+                <div class="item"><p>Burmese</p><p><%=all[0].burmese%></p></div>
+                <div class="item"><p>English</p><p><%=all[0].english%></p></div>
+                <div class="item"><p>Mathematic</p><p><%=all[0].mathematic%></p></div>
+                <div class="item"><p>Science</p><p><%=all[0].science%></p></div>
+                <div class="item"><p>Thai</p><p><%=all[0].thai%></p></div>
+                <div class="item"><p>Art</p><p><%=all[0].art%></p></div>
+                <div class="item"><p>Chinese</p><p><%=all[0].chinese%></p></div>
+            <%}%>
+            <!--<div class="div">
+                <h3>Understanding percent<%= mathematic + science%></h3>
+                <div class="bar">
+                    <div class="percentdiv"><div class="percent"></div></div>
+                    <p>100%</p>
+                </div>
+            </div>-->
+        </div>
+    </div>
+</body>
+</html>

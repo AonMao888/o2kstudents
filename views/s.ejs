@@ -39,6 +39,7 @@
                         <th>Address</th>
                         <th>Email</th>
                         <th>Student ID</th>
+                        <th>Points</th>
                     </tr>
                     <%all.forEach((item)=>{%>
                         <tr>
@@ -46,7 +47,8 @@
                             <td><%=item.class%></td>
                             <td><%=item.address%></td>
                             <td><%=item.email%></td>
-                            <td><a href=""><%=item.student_id%></a></td>
+                            <td><a href="p/<%=item.member_id%>"><%=item.member_id%></a></td>
+                            <td><%= item.points%></td>
                         </tr>
                     <%})%>
                 </table>

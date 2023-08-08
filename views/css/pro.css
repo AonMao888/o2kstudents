@@ -1,0 +1,112 @@
+body{
+    background-color: royalblue;
+    height: 100vh;margin: 0;
+    display: flex;justify-content: center;align-items: center;
+}
+.box{
+    background: white;
+    padding: 15px 36px;
+    border-radius: 19px;
+    display: flex;
+    align-items: center;
+    width: 666px;
+}
+.left{
+    min-width: 300px;
+    margin-right: 5px;
+    display: flex;flex-direction: column;align-items: center;
+}
+.left .profile{
+    width: 123px;
+    height: 123px;
+    object-fit: cover;
+    object-position: center;
+    user-select: none;
+    border-radius: 50%;
+    padding: 5px;
+    outline: 2px solid white;
+    background: royalblue;
+    outline-offset: -3.5px;
+}
+.left h1{
+    margin: 5px;
+    color: #333;
+}
+.item{
+    background: white;
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    margin: 3px 0;
+    padding: 5px 0;
+    transition: 0.4s;
+}
+.item:hover{
+    background: #eeeeeeb9;
+}
+.item p{
+    margin: 5px;
+    font-size: 19px;
+    color: #333;
+}
+.item p:nth-child(1){
+    margin-left: 9px;
+}
+.item p:nth-child(2){
+    margin-right: 9px;
+    color: black;
+}
+hr{
+    background: #eee;
+    height: 300px;
+    width: 3px;border: none;margin: auto 36px;
+}
+.right{
+    width: 100%;
+    margin-left: 5px;
+}
+.right h1{
+    margin: 5px;
+    color: #333;
+    font-size: 27px;
+}
+.div{
+    border: 2px solid #eee;
+    width: 100%;
+    border-radius: 5px;
+    margin-top: 7px;
+}
+.div h3{
+    margin: 5px;
+    font-size: 23px;
+    color: #333;
+    margin-top: 8px;
+    margin-left: 9px;
+}
+.bar{
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+.bar p{
+    margin: 0 5px;
+    color: #333;
+    font-size: 17px;
+    font-weight: bold;
+    margin-right: 12px;
+}
+.percentdiv{
+    width: 100%;
+    background: #eee;
+    border-radius: 5px;
+    margin-left: 10px;
+    border: 1px solid rgba(105, 105, 105, 0.259);
+    overflow: hidden;
+}
+.percent{
+    height: 5px;
+    width: 49%;
+    border-radius: 5px;
+    background: royalblue;
+}

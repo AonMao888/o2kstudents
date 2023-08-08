@@ -145,7 +145,7 @@ th:nth-child(1){
     border-top-left-radius: 7px;
     border-bottom-left-radius: 7px;
 }
-th:nth-child(5){
+th:nth-child(6){
     border-top-right-radius: 7px;
     border-bottom-right-radius: 7px;
 }
