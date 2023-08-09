@@ -17,6 +17,7 @@
             <div class="item"><p>Email</p><p><%=all[0].email%></p></div>
             <div class="item"><p>Class</p><p><%=all[0].class%></p></div>
             <div class="item"><p>ID</p><p><%=all[0].member_id%></p></div>
+            <div class="item point" onclick="showpoint()"><p>My points</p><i class="fa-solid fa-chevron-right"></i></div>
         </div><hr>
         <div class="right">
             <h1>Points</h1>
@@ -25,6 +26,7 @@
                 <div class="item"><p>Mathematic</p><p><%=all[0].mathematic%></p></div>
                 <div class="item"><p>Science</p><p><%=all[0].science%></p></div>
                 <div class="item"><p>Thai</p><p><%=all[0].thai%></p></div>
+                <div class="back" onclick="back()"><i class="fa-solid fa-angle-left"></i><p>Back</p></div>
             <%}else if(all[0].class == 'pre ged'){%>
                 <div class="item"><p>Tai</p><p><%=all[0].tai%></p></div>
                 <div class="item"><p>Burmese</p><p><%=all[0].burmese%></p></div>
@@ -34,6 +36,7 @@
                 <div class="item"><p>Thai</p><p><%=all[0].thai%></p></div>
                 <div class="item"><p>Art</p><p><%=all[0].art%></p></div>
                 <div class="item"><p>Chinese</p><p><%=all[0].chinese%></p></div>
+                <div class="back" onclick="back()"><i class="fa-solid fa-angle-left"></i><p>Back</p></div>
             <%}else if(all[0].class == 'secondary'){%>
                 <div class="item"><p>Tai</p><p><%=all[0].tai%></p></div>
                 <div class="item"><p>Burmese</p><p><%=all[0].burmese%></p></div>
@@ -43,6 +46,7 @@
                 <div class="item"><p>Thai</p><p><%=all[0].thai%></p></div>
                 <div class="item"><p>Art</p><p><%=all[0].art%></p></div>
                 <div class="item"><p>Chinese</p><p><%=all[0].chinese%></p></div>
+                <div class="back" onclick="back()"><i class="fa-solid fa-angle-left"></i><p>Back</p></div>
             <%}%>
             <!--<div class="div">
                 <h3>Understanding percent<%= mathematic + science%></h3>
@@ -53,5 +57,14 @@
             </div>-->
         </div>
     </div>
+    <script>
+        var pointdiv = document.querySelector(".right");
+        function showpoint(){
+            pointdiv.style.right = 0;
+        }
+        function back(){
+            pointdiv.style.right = '-900px';
+        }
+    </script>
 </body>
 </html>
