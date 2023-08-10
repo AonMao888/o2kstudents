@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editor Dashboard</title>
+    <meta name="description" content="Dashboard for teacher to edit students information">
+    <link rel="stylesheet" href="../e.css">
+</head>
+<body>
+    <nav>
+        <div class="left">
+            <a href="">Home</a>
+            <h1>Editor Dashboard<span><%= title.toUpperCase()%></span></h1>
+        </div>
+        <div class="right">
+            <div class="search">
+                <input type="text" placeholder="Search by ID">
+                <button>Search</button>
+            </div>
+        </div>
+    </nav>
+    <table cellspacing="0">
+        <tr>
+            <th>Name</th>
+            <th>Address</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>ID</th>
+            <th>Points</th>
+            <th>Actions</th>
+        </tr>
+        <%all.forEach((item)=>{%>
+            <tr>
+                <td><%= item.name%></td>
+                <td><%=item.address%></td>
+                <td><%=item.email%></td>
+                <td><%=item.phone%></td>
+                <td><%=item.member_id%></td>
+                <td><%=item.points%></td>
+                <td>
+                    <a href="">Edit</a>
+                    <a href="">View</a>
+                </td>
+            </tr>
+        <%})%>
+    </table>
+</body>
+</html>

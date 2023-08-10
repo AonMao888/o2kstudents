@@ -13,6 +13,7 @@ app.set('view engine','ejs');
 app.get('/home.css',(req,res)=>{res.sendFile(__dirname+'/views/css/home.css')})
 app.get('/t.css',(req,res)=>{res.sendFile(__dirname+'/views/css/table.css')})
 app.get('/pr.css',(req,res)=>{res.sendFile(__dirname+'/views/css/pro.css')})
+app.get('/e.css',(req,res)=>{res.sendFile(__dirname+'/views/css/edit.css')})
 
 //get home page
 app.get('/',(req,res)=>{
@@ -63,6 +64,27 @@ app.get('/p/:id',async(req,res)=>{
     let id = req.params.id;
     let {data,error} = await supabase.from('members').select().eq('member_id',id);
     res.render('p',{all:data})
+})
+
+//get editor page
+app.get('/edit/:subject',async(req,res)=>{
+    let subject = req.params.subject;
+    let {data,error} = await supabase.from('members').select().eq('class',subject);
+    let check = supabase.auth.onAuthStateChange((event,session)=>{
+        if(event === 'SIGNED_IN'){
+            console.log('user signed in:',session.user)
+        }else if(event === 'SIGNED_OUT'){console.log('User signed out')}
+    })
+    console.log(check)
+    if(data.length !== 0){
+        res.render('e',{
+            all:data,
+            title:subject
+        })
+    }else{
+        res.send('no page found')
+    }
+    
 })
 
 app.listen(80,()=>{console.log("server started with port 80")})
