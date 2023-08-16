@@ -1,4 +1,5 @@
 body{
+    background: royalblue;
     background: url('https://cdn.wallpapersafari.com/7/28/d2tT54.jpg')no-repeat;
     background-size: cover;
     background-position: center;
@@ -46,6 +47,7 @@ body{
     justify-content: space-between;
     margin: 3px 0;
     padding: 5px 0;
+    color: #333;
     transition: 0.4s;
 }
 .item:hover{
@@ -54,18 +56,21 @@ body{
 .item p{
     margin: 5px;
     font-size: 19px;
-    color: #333;
 }
 .item p:nth-child(1){
     margin-left: 9px;
 }
 .item p:nth-child(2){
     margin-right: 9px;
-    color: black;
 }
 .item i{
     font-size: 15px;
     margin-right: 15px;
+}
+.t{
+    background: #fff;
+    color: rebeccapurple;
+    font-weight: bold;
 }
 .point{cursor: pointer;display: none;color: #333;}
 hr{
@@ -147,6 +152,68 @@ hr{
     margin: 3px;
     font-size: 13px;
 }
+.btn{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: center;
+}
+.btn a{
+    user-select: none;
+    text-decoration: none;
+    margin: 9px;
+}
+.btn a img{
+    width: 24px;
+    height: 24px;
+    object-fit: cover;
+    object-position: center;
+}
+.pop{
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    top: 100vh;left: 0;
+    background: #fff;
+    transition: 0.4s;
+    width: 100%;height: 100%;
+}
+.pop h1{
+    margin: 5px;
+    color: #333;
+    font-size: 36px;
+}
+.pop h1 span{
+    color: royalblue;
+    font-size: 19px;
+    margin: 5px;
+}
+.pop p{
+    margin: 5px;
+    text-align: center;
+    color: #333;
+    font-size: 21px;
+}
+.pop img{
+    width: 159px;
+    height: 159px;
+    object-fit: cover;
+    object-position: center;
+    user-select: none;
+    margin: 19px;
+}
+.pop button{
+    width: 232px;
+    background: rgb(255, 49, 49);
+    color: #fff;
+    padding: 12px 0;
+    font-size: 16px;
+    outline: none;border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
 
 @media(max-width:759px){
     .box{width: 87%;}
@@ -190,6 +257,11 @@ hr{
 }
 
 @media(max-width:500px){
-    .left h1{font-size: 7vw;text-align: center;}.right h1{font-size: 7vw;text-align: center;width: 91%;margin: 9px auto;}
+    .left h1{font-size: 7.5vw;text-align: center;}.right h1{font-size: 7vw;text-align: center;width: 91%;margin: 9px auto;}
     .item p{font-size: 14px;}
+    .btn a img{height: 19px;width: 19px;}
+    .pop h1{font-size: 5vw;}.pop h1 span{font-size: 14px;}
+    .pop p{font-size: 15px;width: 78%;}
+    .pop img{width: 123px;height: 123px;}
+    .pop button{font-size: 14px;}
 }

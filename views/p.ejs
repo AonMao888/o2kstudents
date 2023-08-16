@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Profile</title>
+    <title><%=all[0].name%>'s profile</title>
     <link rel="stylesheet" href="../pr.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="shortcut icon" href="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png" type="image/png">
     <meta name="description" content="<%=all[0].name%>'s information profile.">
 </head>
@@ -15,9 +16,15 @@
         <div class="left">
             <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png" alt="" class="profile">
             <h1><%=all[0].name%></h1>
+            <div class="btn">
+                <a href="javascript:qr()"><img src="https://static-00.iconduck.com/assets.00/qr-code-icon-2048x2048-zo3etgrp.png" alt=""></a>
+                <a href="javascript:shar()"><img src="https://www.svgrepo.com/show/122182/share-button.svg" alt=""></a>
+                <a href="javascript:window.print()"><img src="https://cdn-icons-png.flaticon.com/512/60/60656.png" alt=""></a>
+            </div>
             <div class="item"><p>Address</p><p><%=all[0].address%></p></div>
             <div class="item"><p>Email</p><p><%=all[0].email%></p></div>
-            <div class="item"><p>Class</p><p><%=all[0].class%></p></div>
+            <div class="item"><p>Class</p><p><%=all[0].class.toUpperCase()%></p></div>
+            <div class="item"><p>Since</p><p><%=all[0].since%></p></div>
             <div class="item"><p>ID</p><p><%=all[0].member_id%></p></div>
             <div class="item point" onclick="showpoint()"><p>My points</p><i class="fa-solid fa-chevron-right"></i></div>
         </div><hr>
@@ -28,6 +35,7 @@
                 <div class="item"><p>Mathematic</p><p><%=all[0].mathematic%></p></div>
                 <div class="item"><p>Science</p><p><%=all[0].science%></p></div>
                 <div class="item"><p>Thai</p><p><%=all[0].thai%></p></div>
+                <div class="item t"><p>Total</p><p><%=Number(all[0].english)+Number(all[0].mathematic)+Number(all[0].science)+Number(all[0].thai)%></p></div>
                 <div class="back" onclick="back()"><i class="fa-solid fa-angle-left"></i><p>Back</p></div>
             <%}else if(all[0].class == 'pre ged'){%>
                 <div class="item"><p>Tai</p><p><%=all[0].tai%></p></div>
@@ -38,6 +46,7 @@
                 <div class="item"><p>Thai</p><p><%=all[0].thai%></p></div>
                 <div class="item"><p>Art</p><p><%=all[0].art%></p></div>
                 <div class="item"><p>Chinese</p><p><%=all[0].chinese%></p></div>
+                <div class="item t"><p>Total</p><p><%=Number(all[0].tai)+Number(all[0].burmese)+Number(all[0].english)+Number(all[0].mathematic)+Number(all[0].science)+Number(all[0].thai)+Number(all[0].art)+Number(all[0].chinese)%></p></div>
                 <div class="back" onclick="back()"><i class="fa-solid fa-angle-left"></i><p>Back</p></div>
             <%}else if(all[0].class == 'secondary'){%>
                 <div class="item"><p>Tai</p><p><%=all[0].tai%></p></div>
@@ -48,6 +57,7 @@
                 <div class="item"><p>Thai</p><p><%=all[0].thai%></p></div>
                 <div class="item"><p>Art</p><p><%=all[0].art%></p></div>
                 <div class="item"><p>Chinese</p><p><%=all[0].chinese%></p></div>
+                <div class="item t"><p>Total</p><p><%=Number(all[0].tai)+Number(all[0].burmese)+Number(all[0].english)+Number(all[0].mathematic)+Number(all[0].science)+Number(all[0].thai)+Number(all[0].art)+Number(all[0].chinese)%></p></div>
                 <div class="back" onclick="back()"><i class="fa-solid fa-angle-left"></i><p>Back</p></div>
             <%}%>
             <!--<div class="div">
@@ -59,14 +69,21 @@
             </div>-->
         </div>
     </div>
+    <div class="pop">
+        <h1>Share<span>via QR Code</span></h1>
+        <p>Aim your scanner to <b>QR Code</b> below</p>
+        <img src="" alt="">
+        <button onclick="closepop()">Close</button>
+    </div>
     <script>
         var pointdiv = document.querySelector(".right");
-        function showpoint(){
-            pointdiv.style.right = 0;
-        }
-        function back(){
-            pointdiv.style.right = '-900px';
-        }
+        var pop = document.querySelector(".pop");
+        document.querySelector(".pop img").src = 'https://api.qrserver.com/v1/create-qr-code/?size=150x150&data='+window.location.href;
+        function showpoint(){pointdiv.style.right = 0;}
+        function back(){pointdiv.style.right = '-900px';}
+        function qr(){pop.style.top = 0;}
+        function closepop(){pop.style.top='100vh'}
+        function shar(){navigator.share({title:document.title,url:window.location.href})}
     </script>
 </body>
 </html>

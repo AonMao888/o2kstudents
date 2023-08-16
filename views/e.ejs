@@ -5,13 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Editor Dashboard</title>
     <meta name="description" content="Dashboard for teacher to edit students information">
-    <link rel="stylesheet" href="../e.css">
+    <link rel="stylesheet" href="../../../e.css">
 </head>
 <body>
     <nav>
         <div class="left">
-            <a href="">Home</a>
-            <h1>Editor Dashboard<span><%= title.toUpperCase()%></span></h1>
+            <a href="../../">Home</a>
+            <h1>Editor Dashboard<span><%=clas.toUpperCase()%></span></h1>
         </div>
         <div class="right">
             <div class="search">
@@ -20,6 +20,7 @@
             </div>
         </div>
     </nav>
+    <h1 class="ti"><%=subject.toUpperCase()%> <span><%=year%></span></h1>
     <table cellspacing="0">
         <tr>
             <th>Name</th>
@@ -37,13 +38,102 @@
                 <td><%=item.email%></td>
                 <td><%=item.phone%></td>
                 <td><%=item.member_id%></td>
-                <td><%=item.points%></td>
+                <%if(subject == 'burmese'){%>
+                <td><%=item.burmese%></td>
                 <td>
-                    <a href="">Edit</a>
-                    <a href="">View</a>
+                    <a href="javascript:edit('<%=item.name%>','<%=item.member_id%>',<%=item.burmese%>,<%=year%>,'<%=subject%>')">Edit Points</a>
+                    <a href="../../../p/<%=item.member_id%>">View</a>
                 </td>
+                <%}else if(subject == 'english'){%>
+                <td><%=item.english%></td>
+                <td>
+                    <a href="javascript:edit('<%=item.name%>','<%=item.member_id%>',<%=item.english%>,<%=year%>,'<%=subject%>')">Edit Points</a>
+                    <a href="../../../p/<%=item.member_id%>">View</a>
+                </td>
+                <%}else if(subject == 'tai'){%>
+                <td><%=item.tai%></td>
+                <td>
+                    <a href="javascript:edit('<%=item.name%>','<%=item.member_id%>',<%=item.tai%>,<%=year%>,'<%=subject%>')">Edit Points</a>
+                    <a href="../../../p/<%=item.member_id%>">View</a>
+                </td>
+                <%}else if(subject == 'mathematic'){%>
+                <td><%=item.mathematic%></td>
+                <td>
+                    <a href="javascript:edit('<%=item.name%>','<%=item.member_id%>',<%=item.mathematic%>,<%=year%>,'<%=subject%>')">Edit Points</a>
+                    <a href="../../../p/<%=item.member_id%>">View</a>
+                </td>
+                <%}else if(subject == 'science'){%>
+                <td><%=item.science%></td>
+                <td>
+                    <a href="javascript:edit('<%=item.name%>','<%=item.member_id%>',<%=item.science%>,<%=year%>,'<%=subject%>')">Edit Points</a>
+                    <a href="../../../p/<%=item.member_id%>">View</a>
+                </td>
+                <%}else if(subject == 'thai'){%>
+                <td><%=item.thai%></td>
+                <td>
+                    <a href="javascript:edit('<%=item.name%>','<%=item.member_id%>',<%=item.thai%>,<%=year%>,'<%=subject%>')">Edit Points</a>
+                    <a href="../../../p/<%=item.member_id%>">View</a>
+                </td>
+                <%}else if(subject == 'chinese'){%>
+                <td><%=item.chinese%></td>
+                <td>
+                    <a href="javascript:edit('<%=item.name%>','<%=item.member_id%>',<%=item.chinese%>,<%=year%>,'<%=subject%>')">Edit Points</a>
+                    <a href="../../../p/<%=item.member_id%>">View</a>
+                </td>
+                <%}else if(subject == 'art'){%>
+                <td><%=item.art%></td>
+                <td>
+                    <a href="javascript:edit('<%=item.name%>','<%=item.member_id%>',<%=item.art%>,<%=year%>,'<%=subject%>')">Edit Points</a>
+                    <a href="../../../p/<%=item.member_id%>">View</a>
+                </td>
+                <%}else if(subject == 'ict_basic'){%>
+                <td><%=item.ict_basic%></td>
+                <td>
+                    <a href="javascript:edit('<%=item.name%>','<%=item.member_id%>',<%=item.ict_basic%>,<%=year%>,'<%=subject%>')">Edit Points</a>
+                    <a href="../../../p/<%=item.member_id%>">View</a>
+                </td>
+                <%}else if(subject == 'ict_program'){%>
+                <td><%=item.ict_program%></td>
+                <td>
+                    <a href="javascript:edit('<%=item.name%>','<%=item.member_id%>',<%=item.ict_program%>,<%=year%>,'<%=subject%>')">Edit Points</a>
+                    <a href="../../../p/<%=item.member_id%>">View</a>
+                </td>
+                <%}%>
             </tr>
         <%})%>
     </table>
+    <form method="post" action="/update" class="edit">
+        <h1>Edit Student</h1>
+        <div class="btn">
+            <a href="javascript:closedit()">Cancel</a>
+            <button type="submit">Save</button>
+        </div>
+        <label for="poi">Original Points<span>10</span></label>
+        <input type="number" id="poi" name="point" placeholder="Update Points">
+    </form>
+
+    <script>
+        var editdiv = document.querySelector(".edit");
+        var editpointspan = document.querySelector(".edit label span");
+        var editinput = document.querySelector(".edit input");
+        var form = document.querySelector("form");
+        function edit(name,id,points,year,subject){
+            document.querySelector(".edit h1").textContent = 'Edit '+name+`'s points`;
+            editpointspan.textContent = points;
+            editinput.value = points;
+            editdiv.style.top = 0;
+            form.action = '../../../update/'+year+'/'+subject+'/'+id+'?back='+window.location.href;
+        }
+        function closedit(){editdiv.style.top='100vh'}
+        if(sessionStorage.getItem('teacherses')){
+            if(sessionStorage.getItem('teacherses') == '<%= subject%>'){
+
+            }else{
+                window.location.href = '../../../login?subject='+'<%=subject%>&back='+window.location.href;
+            }
+        }else{
+            window.location.href = '../../../login?subject='+'<%=subject%>&back='+window.location.href;
+        }
+    </script>
 </body>
 </html>

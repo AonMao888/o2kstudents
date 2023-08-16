@@ -4,9 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>O2K <%=page.toUpperCase()%> Lists</title>
+    <title>O2K <%=page.toUpperCase()%> Lists <%=year%></title>
     <meta name="description" content="O2K student's list with information in this page.">
-    <link rel="stylesheet" href="t.css">
+    <link rel="stylesheet" href="../t.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
@@ -14,7 +14,7 @@
         <div class="left">
             <i class="fa-solid fa-bars menubtn" onclick="showmenu()"></i>
             <a href="../"><i class="fa-solid fa-house"></i></a>
-            <a href="" class="logo">O2K <%=page.toUpperCase()%><span>List</span></a>
+            <a href="" class="logo">O2K <%=page.toUpperCase()%><span>List <%=year%></span></a>
         </div>
         <div class="right">
             <a href=""><i class="fa-solid fa-camera"></i><p>Scanner</p></a>
@@ -23,11 +23,12 @@
     </nav>
     <div class="con">
         <div class="menu">
-            <a href="students" class="<%if(page == 'Students'){%>active<%}%>"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/Group_people_icon.jpg/1200px-Group_people_icon.jpg" alt=""><p>All students</p></a>
-            <a href="teachers" class="<%if(page == 'Teachers'){%>active<%}%>"><img src="https://img.freepik.com/premium-vector/geography-teacher_609550-36.jpg" alt=""><p>Teachers</p></a>
-            <a href="pre-ged"><img src="https://play-lh.googleusercontent.com/x0jn0oPxYfnDCmkEEx0V1UBr335A-jHjsWtCVjCFwfYScDcgLHO9eGGGMu6EyxqlFw=w1024-h500" alt=""><p>Pre GED</p></a>
-            <a href="ged"><img src="https://cdnsm5-ss11.sharpschool.com/UserFiles/Servers/Server_445558/Image/Home%20Page/Ed%20Services%20Office/GED%20banner.jpg" alt=""><p>GED</p></a>
-            <a href="ict"><img src="https://www.pngitem.com/pimgs/m/425-4257877_far-reaching-iot-demo-03-02-ict-logos.png" alt=""><p>ICT</p></a>
+            <a href="../students/<%=year%>" class="<%if(page == 'Students'){%>active<%}%>"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/Group_people_icon.jpg/1200px-Group_people_icon.jpg" alt=""><p>All students</p></a>
+            <a href="../teachers/<%=year%>" class="<%if(page == 'Teachers'){%>active<%}%>"><img src="https://img.freepik.com/premium-vector/geography-teacher_609550-36.jpg" alt=""><p>Teachers</p></a>
+            <a href="../ged/<%=year%>" class="<%if(page == 'ged'){%>active<%}%>"><img src="https://cdnsm5-ss11.sharpschool.com/UserFiles/Servers/Server_445558/Image/Home%20Page/Ed%20Services%20Office/GED%20banner.jpg" alt=""><p>GED</p></a>
+            <a href="../pre-ged/<%=year%>" class="<%if(page == 'pre ged'){%>active<%}%>"><img src="https://play-lh.googleusercontent.com/x0jn0oPxYfnDCmkEEx0V1UBr335A-jHjsWtCVjCFwfYScDcgLHO9eGGGMu6EyxqlFw=w1024-h500" alt=""><p>Pre GED</p></a>
+            <a href="../secondary/<%=year%>" class="<%if(page == 'secondary'){%>active<%}%>"><img src="https://s3.eu-central-1.amazonaws.com/assets.languagenut.com/sales_sites/Languagenut%20Sales%20Site%20Image%20Assets/en-gb/Secondary%20Page/Secondary%20Logo.png" alt=""><p>Secondary</p></a>
+            <a href="../ict/<%=year%>" class="<%if(page == 'ict'){%>active<%}%>"><img src="https://www.pngitem.com/pimgs/m/425-4257877_far-reaching-iot-demo-03-02-ict-logos.png" alt=""><p>ICT</p></a>
         </div>
         <div class="home">
             <h1>All <%=page.toUpperCase()%> List</h1>
@@ -44,10 +45,10 @@
                     <%all.forEach((item)=>{%>
                         <tr>
                             <td><%=item.name%></td>
-                            <td><%=item.class%></td>
+                            <td><%=item.class.toUpperCase()%></td>
                             <td><%=item.address%></td>
                             <td><%=item.email%></td>
-                            <td><a href="p/<%=item.member_id%>"><%=item.member_id%></a></td>
+                            <td><a href="../p/<%=item.member_id%>"><%=item.member_id%></a></td>
                             <td><%= item.points%></td>
                         </tr>
                     <%})%>

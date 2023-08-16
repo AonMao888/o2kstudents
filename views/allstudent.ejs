@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Select Years</title>
+    <style>
+        body{
+            margin: 0;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            background: linear-gradient(royalblue,purple)no-repeat;
+        }
+        h1{
+            font-size: 51px;
+            color: #fff;
+            margin: 9px;
+            margin-bottom: 19px;
+        }
+        .select{
+            display: flex;
+            align-items: center;
+            width: 100%;
+            justify-content: center;
+        }
+        .select a{
+            background: #fff;
+            border-radius: 15px;
+            overflow: hidden;
+            margin: 5px 9px;
+            width: 369px;
+            text-decoration: none;
+            padding-bottom: 12px;
+        }
+        .select a img{
+            width: 100%;
+            object-fit: contain;
+            object-position: center;
+            user-select: none;
+        }
+        .select a h2{
+            font-size: 29px;
+            color: rebeccapurple;
+            margin: 5px;
+            margin-left: 15px;
+        }
+        .select a p{
+            margin: 5px;
+            color: #333;
+            font-size: 19px;
+            margin-right: 15px;
+            margin-left: 15px;
+        }
+        @media(max-width:500px){
+            h1{font-size: 9vw;}
+            .select a{width: 272px;}
+            .select a h2{font-size: 6vw;}
+            .select a p{font-size: 15px;}
+        }
+    </style>
+</head>
+<body>
+    <h1>Select Year</h1>
+    <div class="select">
+        <a href="students/2023">
+            <img src="https://st.depositphotos.com/56341270/58286/i/450/depositphotos_582861890-stock-photo-happy-new-year-2023-metallic.jpg" alt="">
+            <h2>2023 Students</h2>
+            <p>View students list with personal points(marks) and more, since 2023</p>
+        </a>
+    </div>
+</body>
+</html>

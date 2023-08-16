@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <style>
+        body{
+            background: royalblue;
+            margin: 0;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        div{
+            background: #fff;
+            border-radius: 15px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 450px;
+            margin: 15px;
+        }
+        h1{margin: 5px;color: royalblue;font-size: 36px;margin-top: 29px;margin-bottom: 9px;}
+        input{width: 89%;margin-top: 9px;padding: 10px;color: #333;border-radius: 5px;background: none;border: 2px solid dimgray;outline: none;}
+        input:focus{border-color: royalblue;}
+        button{
+            width: 51%;
+            margin-top: 12px;
+            margin-bottom: 23px;
+            padding: 9px;
+            font-size: 16px;
+            background-color: royalblue;
+            color: #fff;
+            outline: none;border: none;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1>Login</h1>
+        <input required type="email" placeholder="Email" class="email">
+        <input required type="password" placeholder="Password" class="pass">
+        <button onclick="login()">Login</button>
+    </div>
+    <script>
+        var url = new URL(window.location.href);
+        let subject = url.searchParams.get('subject');
+        let back = url.searchParams.get('back');
+        let db = [
+            {"email":"burmese@gmail.com","pass":"burmese","subject":"burmese"},
+            {"email":"english@gmail.com","pass":"english","subject":"english"}
+        ];
+        console.log(subject)
+        var email = document.querySelector(".email");
+        var pass = document.querySelector(".pass");
+        function login(){
+            let res = db.find((i)=>i.email === email.value && i.pass === pass.value && i.subject === subject);
+            if(res){
+                sessionStorage.setItem('teacherses',subject);
+                window.location.href = back;
+            }else{
+                alert('No account found!!')
+            }
+        }
+
+    </script>
+</body>
+</html>

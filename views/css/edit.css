@@ -107,3 +107,142 @@ td:nth-child(7) a{
 tr:hover{
     background: #eee;
 }
+.edit{
+    background: #fff;
+    position: fixed;
+    transition: 0.4s;
+    top: 100vh;left: 0;
+    width: 100%;height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    flex-direction: column;
+}
+.edit h1{
+    font-size: 36px;
+    color: royalblue;
+    margin: 9px;
+}
+.edit .btn{
+    display: flex;
+    position: absolute;
+    align-items: center;
+    top: 5px;
+    right: 5px;
+}
+.edit .btn a{
+    text-decoration: none;
+    color: red;
+    font-weight: bold;
+    font-size: 17px;
+    margin: 5px 7px;
+    padding: 9px;
+}
+.edit .btn button{
+    outline: none;border: none;
+    text-decoration: none;
+    margin: 5px 7px;
+    padding: 9px 19px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+.edit .btn button:nth-child(1){
+    background: rgb(255, 55, 55);
+    color: #fff;
+}
+.edit .btn button:nth-child(2){
+    background: royalblue;
+    color: #fff;
+}
+.edit label{
+    width: 500px;
+    margin: 5px;
+    margin-bottom: 9px;
+    font-size: 17px;
+    color: #333;
+}
+.edit label span{
+    color: #fff;
+    background: royalblue;
+    padding: 3px 7px;
+    border-radius: 51px;
+    margin-left: 3px;
+}
+.edit input{
+    width: 482px;
+    padding: 12px;
+    font-size: 16px;
+    background: none;
+    border: 1px solid rgba(105, 105, 105, 0.69);
+    border-radius: 4px;
+    outline: none;
+}
+.edit input:focus{
+    border-color: royalblue;
+    box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.162);
+}
+.ti{
+    display: flex;
+    align-items: center;
+    color: #333;
+    font-size: 29px;
+    width: 91%;
+    margin: 2px;
+}
+.ti span{
+    color: rebeccapurple;
+    margin-left: 3px;
+}
+.ask{
+    position: fixed;
+    top: 0;left: 0;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;height: 100%;
+    justify-content: center;
+}
+.ask h1{
+    font-size: 36px;
+    color: rebeccapurple;
+    margin: 9px;
+}
+.ask input{
+    width: 391px;
+    padding: 9px 12px;
+    background: none;
+    color: #333;
+    font-size: 18px;
+    border-radius: 4px;
+    border: 2px solid dimgray;
+    outline: none;
+    margin: 5px 0;
+}
+.ask input:focus{
+    border-color: rebeccapurple;
+    box-shadow: 1px 2px 3px rgba(40, 40, 40, 0.285);
+}
+.ask p{
+    margin: 5px;
+    width: 391px;
+    font-size: 17px;
+    color: rgb(255, 36, 36);
+    display: none;
+}
+.ask button{
+    font-size: 17px;
+    padding: 9px 63px;
+    border-radius: 4px;
+    margin-top: 9px;
+    background: rebeccapurple;
+    color: #fff;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    transition: 0.4s;
+    transform: scale(1);
+}
+.ask button:active{transform: scale(0.91);}
