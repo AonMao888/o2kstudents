@@ -97,21 +97,42 @@ app.get('/edit/:class/:subject/:year', async(req,res)=>{
 
 //listen login page
 app.get('/login',(req,res)=>{
-    res.render('login',{back:req.query.back})
+    res.render('login',{
+        email:'',
+        pass:'',
+        msg:''
+    })
 })
 
 //listen teacher login
 app.post('/login',async(req,res)=>{
+    let subject = req.query.subject;
+    let to = req.query.back
+    let db = [
+        {"email":"tai@gmail.com","pass":"tai","subject":"tai"},
+        {"email":"burmese@gmail.com","pass":"burmese","subject":"burmese"},
+        {"email":"english@gmail.com","pass":"tai","subject":"english"},
+        {"email":"mathematic@gmail.com","pass":"mathematic","subject":"mathematic"},
+        {"email":"science@gmail.com","pass":"science","subject":"science"},
+        {"email":"art@gmail.com","pass":"art","subject":"art"},
+        {"email":"thai@gmail.com","pass":"thai","subject":"thai"},
+        {"email":"chinese@gmail.com","pass":"chinese","subject":"chinese"},
+        {"email":"ictbasic@gmail.com","pass":"ictbasic","subject":"ict_basic"},
+        {"email":"program@gmail.com","pass":"programming","subject":"ict_program"},
+    ];
     const {email,pass} = req.body;
-    let {user,error}=await supabase.auth.signInWithPassword({
-        email:email,
-        password:pass
-    })
-    console.log(user)
-    if(error){
-        res.status(401).send('Login Failed')
+    let data = db.find((i)=> i.email === email && i.pass === pass);
+    if(data){
+        res.render('success',{
+            subject:subject,
+            to: to
+        })
     }else{
-        res.redirect(`${req.query.back}`)
+        res.render('login',{
+            email:email,
+            pass:pass,
+            msg:'Check your email or password!'
+        })
     }
     //console.log(email+','+pass)
 })

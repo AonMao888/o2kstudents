@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Success</title>
+</head>
+<style>
+    body{
+        background: #fff;
+        margin: 0;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    h1{
+        margin: 5px;
+        font-size: 36px;
+        color: royalblue;
+    }
+    p{
+        width: 450px;
+        color: #333;
+        margin: 5px;
+        font-size: 19px;
+    }
+    a{
+        text-decoration: none;
+        background: royalblue;
+        color: #fff;
+        padding: 9px 51px;
+        border-radius: 4px;
+    }
+</style>
+<body>
+    <h1>Login Success</h1>
+    <p>You can visit <b><%=subject%></b> editor dashboard by press button below.</p>
+    <a href="<%=to%>">Visit</a>
+    <script>
+        sessionStorage.setItem('teacherses','<%=subject%>')
+    </script>
+</body>
+</html>

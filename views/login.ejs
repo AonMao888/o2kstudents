@@ -13,7 +13,7 @@
             justify-content: center;
             align-items: center;
         }
-        div{
+        form{
             background: #fff;
             border-radius: 15px;
             overflow: hidden;
@@ -26,6 +26,7 @@
         h1{margin: 5px;color: royalblue;font-size: 36px;margin-top: 29px;margin-bottom: 9px;}
         input{width: 89%;margin-top: 9px;padding: 10px;color: #333;border-radius: 5px;background: none;border: 2px solid dimgray;outline: none;}
         input:focus{border-color: royalblue;}
+        p{color: rgb(255, 51, 51);margin: 5px;width: 91%;}
         button{
             width: 51%;
             margin-top: 12px;
@@ -41,32 +42,26 @@
     </style>
 </head>
 <body>
-    <div>
+    <form method="post" action="login">
         <h1>Login</h1>
-        <input required type="email" placeholder="Email" class="email">
-        <input required type="password" placeholder="Password" class="pass">
-        <button onclick="login()">Login</button>
-    </div>
+        <% if(email){%>
+        <input required value="<%=email%>" type="email" placeholder="Email" name="email">
+        <%}else{%>
+        <input required type="email" placeholder="Email" name="email">
+        <%}%>
+        <%if(pass){%>
+            <input required value="<%=pass%>" type="password" placeholder="Password" name="pass">
+        <%}else{%>
+            <input required type="password" placeholder="Password" name="pass">
+        <%}%>
+        <p><%=msg%></p>
+        <button type="submit">Login</button>
+    </form>
     <script>
-        var url = new URL(window.location.href);
-        let subject = url.searchParams.get('subject');
-        let back = url.searchParams.get('back');
-        let db = [
-            {"email":"burmese@gmail.com","pass":"burmese","subject":"burmese"},
-            {"email":"english@gmail.com","pass":"english","subject":"english"}
-        ];
-        console.log(subject)
-        var email = document.querySelector(".email");
-        var pass = document.querySelector(".pass");
-        function login(){
-            let res = db.find((i)=>i.email === email.value && i.pass === pass.value && i.subject === subject);
-            if(res){
-                sessionStorage.setItem('teacherses',subject);
-                window.location.href = back;
-            }else{
-                alert('No account found!!')
-            }
-        }
+        var url = window.location.href;
+        let link = url.split('/login')[1];
+        var form = document.querySelector("form");
+        form.action = 'login'+link;
 
     </script>
 </body>
