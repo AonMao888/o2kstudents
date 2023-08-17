@@ -1,3 +1,7 @@
+@font-face{
+    src: url('/font');
+    font-family: 'pa';
+}
 body{
     background: #eee;
     margin: 0;
@@ -154,6 +158,9 @@ td{
     font-size: 17px;
     color: #333;
     text-align: center;
+}
+td:nth-child(1){
+    font-family: 'pa';
 }
 td a{
     text-decoration: none;

@@ -15,6 +15,7 @@ app.get('/home.css',(req,res)=>{res.sendFile(__dirname+'/views/css/home.css')})
 app.get('/t.css',(req,res)=>{res.sendFile(__dirname+'/views/css/table.css')})
 app.get('/pr.css',(req,res)=>{res.sendFile(__dirname+'/views/css/pro.css')})
 app.get('/e.css',(req,res)=>{res.sendFile(__dirname+'/views/css/edit.css')})
+app.get('/font',(req,res)=>{res.sendFile(__dirname+'/pa.ttf')})
 
 //get home page
 app.get('/',(req,res)=>{

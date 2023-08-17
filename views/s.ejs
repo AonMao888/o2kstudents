@@ -48,8 +48,14 @@
                             <td><%=item.class.toUpperCase()%></td>
                             <td><%=item.address%></td>
                             <td><%=item.email%></td>
-                            <td><a href="../p/<%=item.member_id%>"><%=item.member_id%></a></td>
-                            <td><%= item.points%></td>
+                            <td><a href="../p/<%=item.member_id%>"><%=item.member_id.toUpperCase()%></a></td>
+                            <%if(item.class == 'ged'){%>
+                            <td><%= Number(item.english)+Number(item.mathematic)+Number(item.science)+Number(item.thai)%></td>
+                            <%}else if(item.class == 'pre ged'){%>
+                            <td><%=Number(item.tai)+Number(item.burmese)+Number(item.english)+Number(item.mathematic)+Number(item.science)+Number(item.thai)+Number(item.art)+Number(item.chinese)%></td>
+                            <%}else if(item.class == 'secondary'){%>
+                            <td><%=Number(item.tai)+Number(item.burmese)+Number(item.english)+Number(item.mathematic)+Number(item.science)+Number(item.thai)+Number(item.art)+Number(item.chinese)%></td>
+                            <%}%>
                         </tr>
                     <%})%>
                 </table>

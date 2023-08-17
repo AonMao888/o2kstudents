@@ -29,8 +29,8 @@
             <div class="item point" onclick="showpoint()"><p>My points</p><i class="fa-solid fa-chevron-right"></i></div>
         </div><hr>
         <div class="right">
-            <h1>Points</h1>
             <%if(all[0].class == 'ged'){%>
+            <h1>Points</h1>
                 <div class="item"><p>English</p><p><%=all[0].english%></p></div>
                 <div class="item"><p>Mathematic</p><p><%=all[0].mathematic%></p></div>
                 <div class="item"><p>Science</p><p><%=all[0].science%></p></div>
@@ -38,6 +38,7 @@
                 <div class="item t"><p>Total</p><p><%=Number(all[0].english)+Number(all[0].mathematic)+Number(all[0].science)+Number(all[0].thai)%></p></div>
                 <div class="back" onclick="back()"><i class="fa-solid fa-angle-left"></i><p>Back</p></div>
             <%}else if(all[0].class == 'pre ged'){%>
+            <h1>Points</h1>
                 <div class="item"><p>Tai</p><p><%=all[0].tai%></p></div>
                 <div class="item"><p>Burmese</p><p><%=all[0].burmese%></p></div>
                 <div class="item"><p>English</p><p><%=all[0].english%></p></div>
@@ -49,6 +50,7 @@
                 <div class="item t"><p>Total</p><p><%=Number(all[0].tai)+Number(all[0].burmese)+Number(all[0].english)+Number(all[0].mathematic)+Number(all[0].science)+Number(all[0].thai)+Number(all[0].art)+Number(all[0].chinese)%></p></div>
                 <div class="back" onclick="back()"><i class="fa-solid fa-angle-left"></i><p>Back</p></div>
             <%}else if(all[0].class == 'secondary'){%>
+            <h1>Points</h1>
                 <div class="item"><p>Tai</p><p><%=all[0].tai%></p></div>
                 <div class="item"><p>Burmese</p><p><%=all[0].burmese%></p></div>
                 <div class="item"><p>English</p><p><%=all[0].english%></p></div>
