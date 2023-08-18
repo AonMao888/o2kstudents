@@ -56,14 +56,6 @@ app.get('/ged/:year',async(req,res)=>{
     }
 })
 
-//get ICT page
-app.get('/ict/:year',async(req,res)=>{
-    if(req.params.year == 2023){
-        let {data,error} = await supabase.from('2023').select().eq('class','ict');
-        res.render('s',{all:data,page:'ict',year:2023})
-    }
-})
-
 //get Secondary page
 app.get('/secondary/:year',async(req,res)=>{
     if(req.params.year == 2023){
@@ -112,7 +104,7 @@ app.post('/login',async(req,res)=>{
     let db = [
         {"email":"tai@gmail.com","pass":"tai","subject":"tai"},
         {"email":"burmese@gmail.com","pass":"burmese","subject":"burmese"},
-        {"email":"english@gmail.com","pass":"tai","subject":"english"},
+        {"email":"english@gmail.com","pass":"english","subject":"english"},
         {"email":"mathematic@gmail.com","pass":"mathematic","subject":"mathematic"},
         {"email":"science@gmail.com","pass":"science","subject":"science"},
         {"email":"art@gmail.com","pass":"art","subject":"art"},

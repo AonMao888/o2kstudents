@@ -36,7 +36,7 @@
                 <td><%= item.name%></td>
                 <td><%=item.address%></td>
                 <td><%=item.email%></td>
-                <td><%=item.phone%></td>
+                <td><a style="color: royalblue;text-decoration: none;" href="tel:<%=item.phone%>"><%=item.phone%></a></td>
                 <td><%=item.member_id%></td>
                 <%if(subject == 'burmese'){%>
                 <td><%=item.burmese%></td>

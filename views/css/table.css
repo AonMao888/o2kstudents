@@ -128,6 +128,16 @@ nav .menubtn{
     font-size: 36px;
     margin-left: 19px;
     color: #333;
+    display: flex;
+    align-items: center;
+}
+.home h1 span{
+    background: rgb(179, 63, 217);
+    color: #fff;
+    font-size: 17px;
+    margin-left: 5px;
+    padding: 3px 10px;
+    border-radius: 15px;
 }
 table{
     background: white;

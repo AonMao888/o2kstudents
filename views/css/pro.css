@@ -1,3 +1,7 @@
+@font-face{
+    src: url('/font');
+    font-family: 'pa';
+}
 body{
     background: royalblue;
     background: url('https://cdn.wallpapersafari.com/7/28/d2tT54.jpg')no-repeat;
@@ -36,6 +40,7 @@ body{
     margin: 5px;
     font-size: 32px;
     color: #333;
+    font-family: 'pa';
 }
 .item{
     background: rgba(255, 255, 255, 0.164);
