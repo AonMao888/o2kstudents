@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scanner</title>
+    <link rel="shortcut icon" href="https://cdn-icons-png.flaticon.com/512/9558/9558077.png" type="image/x-icon">
+    <style>
+        body{
+            background: #fff;
+            margin: 0;
+            min-height: 100vh;
+        }
+        nav{
+            background: rgb(52, 52, 52);
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 51px;
+        }
+        nav a{margin: 5px 15px;user-select: none;}
+        nav a img{height: 24px;object-fit: cover;object-position: center;}
+        nav h1{margin: 0;color: #fff;font-size: 27px;}
+        video{
+            background: #000;
+            width: 100%;
+            min-height: calc(100vh - 55px);
+            object-fit: cover;
+        }#canvas{display: none;}
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="../"><img src="https://cdn-icons-png.flaticon.com/512/2099/2099190.png" alt=""></a>
+        <h1>Scanner</h1>
+        <div class="link">
+            <a href="javascript:window.location.reload()"><img src="https://cdn-icons-png.flaticon.com/512/560/560512.png" alt=""></a>
+            <a href="javascript:shar()"><img src="https://cdn-icons-png.flaticon.com/512/929/929468.png" alt=""></a>
+        </div>
+    </nav>
+    <video id="video"></video><canvas id="canvas"></canvas>
+    <script src="https://cdn.jsdelivr.net/npm/jsqr/dist/jsQR.js"></script>
+    <script type="text/javascript">
+        const video = document.getElementById('video');
+        const canvas = document.getElementById('canvas');
+        const ctx = canvas.getContext('2d');
+
+        navigator.mediaDevices.getUserMedia({ video: { facingMode: 'environment' } })
+        .then(stream => {
+            video.srcObject = stream;
+            video.onloadedmetadata = () => {
+            video.play();
+            tick();
+            };
+        });
+
+        function tick() {
+        canvas.width = video.videoWidth;
+        canvas.height = video.videoHeight;
+        ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
+
+        try {
+            const result = jsQR(ctx.getImageData(0, 0, canvas.width, canvas.height).data, canvas.width, canvas.height);
+            if (result) {
+            if(result.data.toLowerCase().includes("http")){
+                window.location.href = result.data;
+            }else{
+                alert(result.data)
+            }
+            }
+        } catch (error) {
+            console.log(error);
+        }
+
+        requestAnimationFrame(tick);
+        }
+        function shar(){
+            navigator.share({
+                title:"Scan QR Code Online",
+                url:window.location.href
+            })
+        }
+    </script>
+</body>
+</html>

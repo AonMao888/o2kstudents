@@ -177,4 +177,9 @@ app.post('/update/:year/:subject/:id',async(req,res)=>{
     }
 })
 
+//get qr code scanner page
+app.get('/scanner',(req,res)=>{
+    res.sendFile(__dirname+'/scan.html')
+})
+
 app.listen(80,()=>{console.log("server started with port 80")})
