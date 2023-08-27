@@ -45,6 +45,7 @@
         const video = document.getElementById('video');
         const canvas = document.getElementById('canvas');
         const ctx = canvas.getContext('2d');
+        var noti = new Audio('https://onlyrefer.netlify.app/assets/sound/noti.mp3');
 
         navigator.mediaDevices.getUserMedia({ video: { facingMode: 'environment' } })
         .then(stream => {
@@ -65,8 +66,10 @@
             if (result) {
             if(result.data.toLowerCase().includes("http")){
                 window.location.href = result.data;
+                noti.play();
             }else{
-                alert(result.data)
+                alert(result.data);
+                noti.play();
             }
             }
         } catch (error) {
