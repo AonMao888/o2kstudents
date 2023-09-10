@@ -203,10 +203,10 @@ td a{
 }
 @media(max-width:888px){
     nav .menubtn{display: block;}
-    .menu{position: fixed;left: -300px;top: 63px;transition: 0.5s;}
+    .menu{position: fixed;left: -300px;top: 63px;transition: 0.5s;border-right: 2px solid #e0e0e0;}
 }
 @media(max-width:615px){
-    .sc{width: 99%;margin: 0 auto;overflow-x: scroll;}
+    .sc{width: 99%;margin: 0 auto;overflow-x: scroll;margin-bottom: 15px;}
     table{width: 600px;margin: 9px;}
     nav .menubtn{font-size: 15px;}
     nav .left a i{font-size: 15px;}.menu a p{font-size: 14px;}

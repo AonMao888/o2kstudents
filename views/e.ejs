@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Editor Dashboard</title>
+    <title><%=subject.toUpperCase()%> | <%=clas.toUpperCase()%> Editor Dashboard</title>
     <meta name="description" content="Dashboard for teacher to edit students information">
     <link rel="stylesheet" href="../../../e.css">
 </head>
@@ -21,87 +21,89 @@
         </div>
     </nav>
     <h1 class="ti"><%=subject.toUpperCase()%> <span><%=year%></span></h1>
-    <table cellspacing="0">
-        <tr>
-            <th>Name</th>
-            <th>Address</th>
-            <th>Email</th>
-            <th>Phone</th>
-            <th>ID</th>
-            <th>Points</th>
-            <th>Actions</th>
-        </tr>
-        <%all.forEach((item)=>{%>
+    <div class="bb">
+        <table cellspacing="0">
             <tr>
-                <td><%= item.name%></td>
-                <td><%=item.address%></td>
-                <td><%=item.email%></td>
-                <td><a style="color: royalblue;text-decoration: none;" href="tel:<%=item.phone%>"><%=item.phone%></a></td>
-                <td><%=item.member_id%></td>
-                <%if(subject == 'burmese'){%>
-                <td><%=item.burmese%></td>
-                <td>
-                    <a href="javascript:edit('<%=item.name%>','<%=item.member_id%>',<%=item.burmese%>,<%=year%>,'<%=subject%>')">Edit Points</a>
-                    <a href="../../../p/<%=item.member_id%>">View</a>
-                </td>
-                <%}else if(subject == 'english'){%>
-                <td><%=item.english%></td>
-                <td>
-                    <a href="javascript:edit('<%=item.name%>','<%=item.member_id%>',<%=item.english%>,<%=year%>,'<%=subject%>')">Edit Points</a>
-                    <a href="../../../p/<%=item.member_id%>">View</a>
-                </td>
-                <%}else if(subject == 'tai'){%>
-                <td><%=item.tai%></td>
-                <td>
-                    <a href="javascript:edit('<%=item.name%>','<%=item.member_id%>',<%=item.tai%>,<%=year%>,'<%=subject%>')">Edit Points</a>
-                    <a href="../../../p/<%=item.member_id%>">View</a>
-                </td>
-                <%}else if(subject == 'mathematic'){%>
-                <td><%=item.mathematic%></td>
-                <td>
-                    <a href="javascript:edit('<%=item.name%>','<%=item.member_id%>',<%=item.mathematic%>,<%=year%>,'<%=subject%>')">Edit Points</a>
-                    <a href="../../../p/<%=item.member_id%>">View</a>
-                </td>
-                <%}else if(subject == 'science'){%>
-                <td><%=item.science%></td>
-                <td>
-                    <a href="javascript:edit('<%=item.name%>','<%=item.member_id%>',<%=item.science%>,<%=year%>,'<%=subject%>')">Edit Points</a>
-                    <a href="../../../p/<%=item.member_id%>">View</a>
-                </td>
-                <%}else if(subject == 'thai'){%>
-                <td><%=item.thai%></td>
-                <td>
-                    <a href="javascript:edit('<%=item.name%>','<%=item.member_id%>',<%=item.thai%>,<%=year%>,'<%=subject%>')">Edit Points</a>
-                    <a href="../../../p/<%=item.member_id%>">View</a>
-                </td>
-                <%}else if(subject == 'chinese'){%>
-                <td><%=item.chinese%></td>
-                <td>
-                    <a href="javascript:edit('<%=item.name%>','<%=item.member_id%>',<%=item.chinese%>,<%=year%>,'<%=subject%>')">Edit Points</a>
-                    <a href="../../../p/<%=item.member_id%>">View</a>
-                </td>
-                <%}else if(subject == 'art'){%>
-                <td><%=item.art%></td>
-                <td>
-                    <a href="javascript:edit('<%=item.name%>','<%=item.member_id%>',<%=item.art%>,<%=year%>,'<%=subject%>')">Edit Points</a>
-                    <a href="../../../p/<%=item.member_id%>">View</a>
-                </td>
-                <%}else if(subject == 'ict_basic'){%>
-                <td><%=item.ict_basic%></td>
-                <td>
-                    <a href="javascript:edit('<%=item.name%>','<%=item.member_id%>',<%=item.ict_basic%>,<%=year%>,'<%=subject%>')">Edit Points</a>
-                    <a href="../../../p/<%=item.member_id%>">View</a>
-                </td>
-                <%}else if(subject == 'ict_program'){%>
-                <td><%=item.ict_program%></td>
-                <td>
-                    <a href="javascript:edit('<%=item.name%>','<%=item.member_id%>',<%=item.ict_program%>,<%=year%>,'<%=subject%>')">Edit Points</a>
-                    <a href="../../../p/<%=item.member_id%>">View</a>
-                </td>
-                <%}%>
+                <th>Name</th>
+                <th>Address</th>
+                <th>Email</th>
+                <th>Phone</th>
+                <th>ID</th>
+                <th>Points</th>
+                <th>Actions</th>
             </tr>
-        <%})%>
-    </table>
+            <%all.forEach((item)=>{%>
+                <tr title="<%= item.name%>">
+                    <td></td>
+                    <td><%=item.address%></td>
+                    <td><%=item.email%></td>
+                    <td><a style="color: royalblue;text-decoration: none;" href="tel:<%=item.phone%>"><%=item.phone%></a></td>
+                    <td><%=item.member_id%></td>
+                    <%if(subject == 'burmese'){%>
+                    <td><%=item.burmese%></td>
+                    <td>
+                        <a href="javascript:edit('<%=item.name%>','<%=item.member_id%>',<%=item.burmese%>,<%=year%>,'<%=subject%>')">Edit Points</a>
+                        <a href="../../../p/<%=item.member_id%>">View</a>
+                    </td>
+                    <%}else if(subject == 'english'){%>
+                    <td><%=item.english%></td>
+                    <td>
+                        <a href="javascript:edit('<%=item.name%>','<%=item.member_id%>',<%=item.english%>,<%=year%>,'<%=subject%>')">Edit Points</a>
+                        <a href="../../../p/<%=item.member_id%>">View</a>
+                    </td>
+                    <%}else if(subject == 'tai'){%>
+                    <td><%=item.tai%></td>
+                    <td>
+                        <a href="javascript:edit('<%=item.name%>','<%=item.member_id%>',<%=item.tai%>,<%=year%>,'<%=subject%>')">Edit Points</a>
+                        <a href="../../../p/<%=item.member_id%>">View</a>
+                    </td>
+                    <%}else if(subject == 'mathematic'){%>
+                    <td><%=item.mathematic%></td>
+                    <td>
+                        <a href="javascript:edit('<%=item.name%>','<%=item.member_id%>',<%=item.mathematic%>,<%=year%>,'<%=subject%>')">Edit Points</a>
+                        <a href="../../../p/<%=item.member_id%>">View</a>
+                    </td>
+                    <%}else if(subject == 'science'){%>
+                    <td><%=item.science%></td>
+                    <td>
+                        <a href="javascript:edit('<%=item.name%>','<%=item.member_id%>',<%=item.science%>,<%=year%>,'<%=subject%>')">Edit Points</a>
+                        <a href="../../../p/<%=item.member_id%>">View</a>
+                    </td>
+                    <%}else if(subject == 'thai'){%>
+                    <td><%=item.thai%></td>
+                    <td>
+                        <a href="javascript:edit('<%=item.name%>','<%=item.member_id%>',<%=item.thai%>,<%=year%>,'<%=subject%>')">Edit Points</a>
+                        <a href="../../../p/<%=item.member_id%>">View</a>
+                    </td>
+                    <%}else if(subject == 'chinese'){%>
+                    <td><%=item.chinese%></td>
+                    <td>
+                        <a href="javascript:edit('<%=item.name%>','<%=item.member_id%>',<%=item.chinese%>,<%=year%>,'<%=subject%>')">Edit Points</a>
+                        <a href="../../../p/<%=item.member_id%>">View</a>
+                    </td>
+                    <%}else if(subject == 'art'){%>
+                    <td><%=item.art%></td>
+                    <td>
+                        <a href="javascript:edit('<%=item.name%>','<%=item.member_id%>',<%=item.art%>,<%=year%>,'<%=subject%>')">Edit Points</a>
+                        <a href="../../../p/<%=item.member_id%>">View</a>
+                    </td>
+                    <%}else if(subject == 'ict_basic'){%>
+                    <td><%=item.ict_basic%></td>
+                    <td>
+                        <a href="javascript:edit('<%=item.name%>','<%=item.member_id%>',<%=item.ict_basic%>,<%=year%>,'<%=subject%>')">Edit Points</a>
+                        <a href="../../../p/<%=item.member_id%>">View</a>
+                    </td>
+                    <%}else if(subject == 'ict_program'){%>
+                    <td><%=item.ict_program%></td>
+                    <td>
+                        <a href="javascript:edit('<%=item.name%>','<%=item.member_id%>',<%=item.ict_program%>,<%=year%>,'<%=subject%>')">Edit Points</a>
+                        <a href="../../../p/<%=item.member_id%>">View</a>
+                    </td>
+                    <%}%>
+                </tr>
+            <%})%>
+        </table>
+    </div>
     <form method="post" action="/update" class="edit">
         <h1>Edit Student</h1>
         <div class="btn">

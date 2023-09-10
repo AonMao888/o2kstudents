@@ -49,7 +49,7 @@
                             <td><%=item.email%></td>
                             <td><a href="../p/<%=item.member_id%>"><%=item.member_id.toUpperCase()%></a></td>
                             <%if(item.class == 'ged'){%>
-                            <td><%= Number(item.english)+Number(item.mathematic)+Number(item.science)+Number(item.thai)%></td>
+                            <td><%= Number(item.english)+Number(item.mathematic)+Number(item.science)+Number(item.thai)+Number(item.social)+Number(item.rla)%></td>
                             <%}else if(item.class == 'pre ged'){%>
                             <td><%=Number(item.tai)+Number(item.burmese)+Number(item.english)+Number(item.mathematic)+Number(item.science)+Number(item.thai)+Number(item.art)+Number(item.chinese)%></td>
                             <%}else if(item.class == 'secondary'){%>
@@ -65,6 +65,7 @@
         var menu = document.querySelector(".menu");
         function showmenu(){menu.style.left=0}
         document.querySelector(".home").onclick=()=>{menu.style.left='-300px'}
+        document.onscroll=()=>{menu.style.left='-300px'}
         function shar(){navigator.share({title:document.title,url:window.location.href})}
     </script>
 </body>

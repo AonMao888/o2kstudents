@@ -102,16 +102,16 @@ app.post('/login',async(req,res)=>{
     let subject = req.query.subject;
     let to = req.query.back
     let db = [
-        {"email":"tai@gmail.com","pass":"tai","subject":"tai"},
-        {"email":"burmese@gmail.com","pass":"burmese","subject":"burmese"},
-        {"email":"english@gmail.com","pass":"english","subject":"english"},
-        {"email":"mathematic@gmail.com","pass":"mathematic","subject":"mathematic"},
-        {"email":"science@gmail.com","pass":"science","subject":"science"},
-        {"email":"art@gmail.com","pass":"art","subject":"art"},
-        {"email":"thai@gmail.com","pass":"thai","subject":"thai"},
-        {"email":"chinese@gmail.com","pass":"chinese","subject":"chinese"},
-        {"email":"ictbasic@gmail.com","pass":"ictbasic","subject":"ict_basic"},
-        {"email":"program@gmail.com","pass":"programming","subject":"ict_program"},
+        {"email":"tai@o2k.mail","pass":"taio2knk","subject":"tai"},
+        {"email":"myanmar@o2k.mail","pass":"premyano2k","subject":"burmese"},
+        {"email":"english@o2k.mail","pass":"b1englisho2k","subject":"english"},
+        {"email":"math@o2k.mail","pass":"gedmathso2k","subject":"mathematic"},
+        {"email":"science@o2k.mail","pass":"gedscio2k","subject":"science"},
+        {"email":"art@o2k.mail","pass":"arto2k","subject":"art"},
+        {"email":"thai@o2k.mail","pass":"thaio2knk","subject":"thai"},
+        {"email":"chinese@o2k.mail","pass":"chno2knk","subject":"chinese"},
+        {"email":"ictbasic@o2k.mail","pass":"icto2knk","subject":"ict_basic"},
+        {"email":"program@o2k.mail","pass":"programming","subject":"ict_program"},
     ];
     const {email,pass} = req.body;
     let data = db.find((i)=> i.email === email && i.pass === pass);
