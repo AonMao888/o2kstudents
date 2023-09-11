@@ -132,6 +132,7 @@ tr:hover{
     font-size: 36px;
     color: royalblue;
     margin: 9px;
+    font-family: pa;
 }
 .edit .btn{
     display: flex;
@@ -279,7 +280,15 @@ tr:hover{
     .search{display: none;}
     .ti{font-size: 4vw;}
     table{width: 98%;}
-    td{font-size: 12px;padding: 10px 3px;}
+    td{font-size: 14px;padding: 10px 3px;}
+    .edit h1{
+        font-size: 29px;
+    }
+    .edit label{font-size: 16px;}
+    .edit label span{font-size: 15px;}
+    .edit input{font-size: 15px;}
+    .edit .btn button{font-size: 15px;}
+    .edit .btn a{font-size: 16px;}
 }
 @media(max-width:624px){
     .bb{
@@ -287,9 +296,22 @@ tr:hover{
         justify-content: flex-start;
     }
     table{min-width: 729px;margin: 9px;}
+    .edit h1{font-size: 24px;}
+    .edit label{font-size: 15px;width: 78%;}
+    .edit label span{font-size: 14px;}
+    .edit input{font-size: 14px;}
+    .edit .btn button{font-size: 14px;padding: 8px 17px;}
+    .edit .btn a{font-size: 14px;}
+    .edit input{width: 78%;}
+        
 }
 @media(max-width:500px){
     nav .left h1{font-size: 4.5vw;}
     th{font-size: 16px;}
     .ti{font-size: 4.5vw;}
+    .edit h1{font-size: 19px;}
+    .edit input{width: 88%;}
+    .edit label{width: 88%;}
+    .edit .btn button{font-size: 13px;padding: 7px 17px;}
+    .edit .btn a{font-size: 13px;}
 }
