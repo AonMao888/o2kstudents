@@ -172,6 +172,9 @@ td{
 td:nth-child(1){
     font-family: 'pa';
 }
+td:nth-child(3){
+    font-family: 'pa';
+}
 td a{
     text-decoration: none;
     width: 100%;
