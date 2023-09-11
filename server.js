@@ -185,7 +185,7 @@ app.get('/scanner',(req,res)=>{
 //listen search query
 app.post('/search',async(req,res)=>{
     let {id} = req.body;
-    const {data,error} = await supabase.from('2023').select().ilike('member_id',`%${id}%`);
+    const {data,error} = await supabase.from('2023').select().ilike('member_id',`%${id.toLowerCase()}%`);
     if(error){
         res.send(error);
     }else{
