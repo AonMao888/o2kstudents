@@ -182,4 +182,28 @@ app.get('/scanner',(req,res)=>{
     res.sendFile(__dirname+'/scan.html')
 })
 
+//listen search query
+app.post('/search',async(req,res)=>{
+    let {id} = req.body;
+    const {data,error} = await supabase.from('2023').select().ilike('member_id',`%${id}%`);
+    if(error){
+        res.send(error);
+    }else{
+        if(data.length !== 0){
+            res.render('find',{
+                all:data,
+                value:id
+            })
+            console.log(data)
+        }else{
+            res.render('find',{
+                data:'not found',
+                value:id
+            })
+        }
+    }
+    
+    
+})
+
 app.listen(80,()=>{console.log("server started with port 80")})
