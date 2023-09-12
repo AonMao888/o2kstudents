@@ -59,15 +59,17 @@ body{
     background: #fff;
 }
 .item p{
-    margin: 5px;
+    margin: 3px;
     font-size: 18px;
 }
 .item p:nth-child(1){
     margin-left: 9px;
 }
 .item p:nth-child(2){
-    margin-right: 9px;
+    margin: 0 9px;
     font-weight: bold;
+    word-break: break-all;
+    text-align: right;
 }
 .item i{
     font-size: 15px;

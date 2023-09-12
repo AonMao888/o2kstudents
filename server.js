@@ -2,6 +2,7 @@ const express = require('express');
 const {createClient} = require("@supabase/supabase-js");
 const ejs = require('ejs');
 const app = express();
+const bodyParser = require('body-parser');
 let url = 'https://oxovhbhwuxpyiqkxizbe.supabase.co';
 let pass = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im94b3ZoYmh3dXhweWlxa3hpemJlIiwicm9sZSI6ImFub24iLCJpYXQiOjE2OTA4Njg2MzAsImV4cCI6MjAwNjQ0NDYzMH0.YdbrQlYhlfQrJhC2_99ZGFaL0hrg26sMRbVGXAUejX4';
 
@@ -9,6 +10,7 @@ let supabase = createClient(url,pass);
 app.set('views',__dirname+'/views');
 app.set('view engine','ejs');
 app.use(express.urlencoded({extended:true}))
+app.use(bodyParser.json())
 
 //get css file
 app.get('/home.css',(req,res)=>{res.sendFile(__dirname+'/views/css/home.css')})
@@ -205,6 +207,21 @@ app.post('/search',async(req,res)=>{
     }
     
     
+})
+
+
+//test
+app.get('/up',(req,res)=>{
+    res.sendFile(__dirname+'/up.html')
+})
+
+app.post('/up/send',async(req,res)=>{
+    const {img} = req.body;
+    const {data,error} = await supabase.from('img').
+    insert([{path:img}])
+    if(data){
+        res.send('uploaded')
+    }
 })
 
 app.listen(80,()=>{console.log("server started with port 80")})

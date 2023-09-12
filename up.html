@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="file" id="">
+    <img src="" height="200" alt="">
+    <button onclick="up()">Upload</button>
+    <script>
+        var pre = document.querySelector("img");
+        document.querySelector("input").onchange=(e)=>{
+            let img = e.target.files[0];
+            if(img){
+                const reader = new FileReader();
+                reader.onload=()=>{
+                    pre.src = reader.result;
+                }
+                reader.readAsDataURL(img)
+            }
+        }
+        function up(){
+            fetch(`up/send`,{
+                method:'POST',
+                headers:{
+                    'Content-Type':'application/json',
+                },
+                body:JSON.stringify({img:pre.src})
+            }).then(re=>{
+                console.log(re)
+            })
+        }
+    </script>
+</body>
+</html>
