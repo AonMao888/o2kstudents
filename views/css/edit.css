@@ -280,7 +280,7 @@ tr:hover{
     .search{display: none;}
     .ti{font-size: 4vw;}
     table{width: 98%;}
-    td{font-size: 14px;padding: 10px 3px;}
+    td{font-size: 15px;padding: 10px 3px;}
     .edit h1{
         font-size: 29px;
     }
@@ -312,6 +312,6 @@ tr:hover{
     .edit h1{font-size: 19px;}
     .edit label{width: 88%;}
     .ii{padding: 0;width: 88%;}
-    .edit .btn{display: none;}
+    .edit .btn button{display: none;}
     .b2{display: flex;}
 }
