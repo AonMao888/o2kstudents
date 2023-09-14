@@ -18,7 +18,12 @@ app.get('/t.css',(req,res)=>{res.sendFile(__dirname+'/views/css/table.css')})
 app.get('/pr.css',(req,res)=>{res.sendFile(__dirname+'/views/css/pro.css')})
 app.get('/e.css',(req,res)=>{res.sendFile(__dirname+'/views/css/edit.css')})
 app.get('/font',(req,res)=>{res.sendFile(__dirname+'/pa.ttf')})
-app.get('/logo',(req,res)=>{res.sendFile(__dirname+'/logo.jpeg')})
+app.get('/logo',(req,res)=>{res.sendFile(__dirname+'/img/logo.jpeg')})
+app.get('/imgall',(req,res)=>{res.sendFile(__dirname+'/img/all.jpeg')})
+app.get('/imgteacher',(req,res)=>{res.sendFile(__dirname+'/img/teacher.jpeg')})
+app.get('/imgged',(req,res)=>{res.sendFile(__dirname+'/img/ged.jpeg')})
+app.get('/imgpreged',(req,res)=>{res.sendFile(__dirname+'/img/preged.jpeg')})
+app.get('/imgsecondary',(req,res)=>{res.sendFile(__dirname+'/img/secondary.jpeg')})
 
 //get home page
 app.get('/',(req,res)=>{

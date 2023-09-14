@@ -99,7 +99,8 @@ nav .right a p{
     box-shadow: 3px 2px 3px rgba(52, 52, 52, 0.178);
 }
 .menu a img{
-    height: 36px;
+    height: 42px;
+    border-radius: 4px;
     margin-left: 9px;
 }
 .menu a p{

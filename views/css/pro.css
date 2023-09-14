@@ -39,8 +39,19 @@ body{
 }
 .left h1{
     margin: 5px;
+    max-width: 78%;
+    word-break: break-all;
+    text-align: center;
     font-size: 32px;
     color: #333;
+}
+.left h1 span{
+    font-size: 15px;
+    color: #fff;
+    background: purple;
+    padding: 3.6px 12px;
+    border-radius: 4px;
+    margin-left: 5px;
 }
 .item{
     background: rgba(255, 255, 255, 0.164);
@@ -231,6 +242,7 @@ hr{
         height: 99px;
     }
     .left h1{font-size: 4.5vw;}.right h1{font-size: 4.5vw;}
+    .left h1 span{font-size: 2.4vw;}
     .item p{font-size: 16px;}
 }
 @media(max-width:659px){
@@ -272,4 +284,5 @@ hr{
     .pop p{font-size: 15px;width: 78%;}
     .pop img{width: 123px;height: 123px;}
     .pop button{font-size: 14px;}
+    .left h1 span{font-size: 3.6vw;}
 }
