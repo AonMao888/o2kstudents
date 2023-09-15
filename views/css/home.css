@@ -101,6 +101,54 @@ nav .right a:hover{
     color: dimgray;
     font-size: 17px;
 }
+.b{
+    width: 100%;
+    background: linear-gradient(royalblue,purple)no-repeat;
+    padding: 19px 0;
+    display: flex;
+    margin-top: 63px;
+    margin-bottom: 63px;
+    flex-direction: column;
+    align-items: center;
+}
+.b h1{
+    font-size: 51px;
+    color: #fff;
+    margin: 0;
+    transform: scale(1);
+    transition: 0.4s;
+    margin-top: 32px;
+}
+.short{
+    background: #fff;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    padding: 7px;
+    transform: translateY(63px);
+}
+.short a{
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 15px;
+    margin: 5px 15px;
+    color: #333;
+}
+.short a img{
+    height: 63px;
+    object-fit: contain;
+    object-position: center;
+    user-select: none;
+    border-radius: 51px;
+    margin: 2px;
+}
+.short a p{
+    margin: 2px;
+    font-size: 19px;
+}
 
 @media(max-width:700px){
     nav .left a{font-size: 25px;}
@@ -108,10 +156,15 @@ nav .right a:hover{
     .head h1{font-size: 51px;}.search{width: 91%;}
     .search input{font-size: 19px;margin-left: 9px;}
     .search button{font-size: 15px;padding: 10px 21px;}.head p{font-size: 15px;text-align: center;}
+    .b h1{font-size: 7vw;}
+    .short a p{font-size: 3vw;}
 }
 @media(max-width:591px){
     nav .left a{font-size: 5vw;}
     nav .right a{font-size: 15px;padding: 6px 10px;margin: 0 3px;}
     .head h1{font-size: 9vw;}
     .search input{font-size: 15px;}.search button{font-size: 14px;padding: 8px 15px;}
+    .short{width: 88%;justify-content: space-evenly;transform: translateY(51px);}.short a h1{margin-top: 42px;}
+    .short a{margin: 5px;padding: 9px;}
+    .short a img{height: 51px;}
 }
