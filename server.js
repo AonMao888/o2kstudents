@@ -229,4 +229,51 @@ app.post('/up/send',async(req,res)=>{
     }
 })
 
+//for students api
+app.get("/api/:year/:class",async(req,res)=>{
+    const clas = req.params.class;
+    if(clas == 'all'){
+        const {data,error} = await supabase.from(req.params.year).select('*');
+        if(data){
+            res.json({
+                "status":"fine",
+                "data": data
+            })
+        }else{
+            res.json({
+                "status":"error",
+                "msg": "Make sure you visit correct api link."
+            })
+        }
+    }else if(clas == 'teacher'){
+        const {data,error} = await supabase.from(req.params.year).select().eq('type','teacher');
+        if(data){
+            res.json({
+                "status":"fine",
+                "data": data
+            })
+        }else{
+            res.json({
+                "status":"error",
+                "msg": "Make sure you visit correct api link."
+            })
+        }
+
+    }else{
+        const {data,error} = await supabase.from(req.params.year).select().eq('class',clas);
+        if(data){
+            res.json({
+                "status":"fine",
+                "data": data
+            })
+        }else{
+            res.json({
+                "status":"error",
+                "msg": "Make sure you visit correct api link."
+            })
+        }
+    }
+    
+})
+
 app.listen(80,()=>{console.log("server started with port 80")})
