@@ -237,6 +237,21 @@ app.get("/api/:year/:class",async(req,res)=>{
         if(data){
             res.json({
                 "status":"fine",
+                "length": data.length,
+                "data": data
+            })
+        }else{
+            res.json({
+                "status":"error",
+                "msg": "Make sure you visit correct api link."
+            })
+        }
+    }else if(clas == 'student'){
+        const {data,error} = await supabase.from(req.params.year).select().eq('type','student');
+        if(data){
+            res.json({
+                "status":"fine",
+                "length": data.length,
                 "data": data
             })
         }else{
@@ -250,6 +265,7 @@ app.get("/api/:year/:class",async(req,res)=>{
         if(data){
             res.json({
                 "status":"fine",
+                "length": data.length,
                 "data": data
             })
         }else{
@@ -264,6 +280,7 @@ app.get("/api/:year/:class",async(req,res)=>{
         if(data){
             res.json({
                 "status":"fine",
+                "length": data.length,
                 "data": data
             })
         }else{
