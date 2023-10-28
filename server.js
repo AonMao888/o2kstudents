@@ -235,11 +235,7 @@ app.get("/api/:year/:class",async(req,res)=>{
     if(clas == 'all'){
         const {data,error} = await supabase.from(req.params.year).select('*');
         if(data){
-            res.json({
-                "status":"fine",
-                "length": data.length,
-                "data": data
-            })
+            res.json(data)
         }else{
             res.json({
                 "status":"error",
@@ -249,11 +245,7 @@ app.get("/api/:year/:class",async(req,res)=>{
     }else if(clas == 'student'){
         const {data,error} = await supabase.from(req.params.year).select().eq('type','student');
         if(data){
-            res.json({
-                "status":"fine",
-                "length": data.length,
-                "data": data
-            })
+            res.json(data)
         }else{
             res.json({
                 "status":"error",
@@ -263,11 +255,7 @@ app.get("/api/:year/:class",async(req,res)=>{
     }else if(clas == 'teacher'){
         const {data,error} = await supabase.from(req.params.year).select().eq('type','teacher');
         if(data){
-            res.json({
-                "status":"fine",
-                "length": data.length,
-                "data": data
-            })
+            res.json(data)
         }else{
             res.json({
                 "status":"error",
@@ -278,11 +266,7 @@ app.get("/api/:year/:class",async(req,res)=>{
     }else{
         const {data,error} = await supabase.from(req.params.year).select().eq('class',clas);
         if(data){
-            res.json({
-                "status":"fine",
-                "length": data.length,
-                "data": data
-            })
+            res.json(data)
         }else{
             res.json({
                 "status":"error",
